@@ -1,6 +1,6 @@
 NDS-NetworkedInput
 ===============
-Tools for both users and developers to use their DS lineup consoles to control other devices.
+Tools for both users and developers to use their DS and 3DS lineup consoles to control other devices.
 [This is a hard fork of Louisvh's repo](https://github.com/Louisvh/NDS-controller)
 
 ## Purpose
