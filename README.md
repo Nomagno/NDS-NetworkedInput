@@ -13,6 +13,8 @@ The original project is so compact and elegant I found myself making clients wit
 - [ ] Make the 3DS version pretty, or the NDS version ugly ;)
 
 ## Usage
+*Server:*
+Build the example server using your favorite C-compliant compiler.
 
 *NDS:*
 Build the client into a .nds file using devkitARM or download it __[here](https://github.com/Louisvh/NDS-controller/releases/download/v1.2.0/NDS-controller.nds)__.
@@ -23,7 +25,7 @@ Build the client using devkitARM or download it from __[here](https://github.com
 using your preferred method. 
 
 3DS .cia link, scan in FBI to install:  
-![cia QR v1.2.0](https://user-images.githubusercontent.com/6605273/31919870-b90b7636-b865-11e7-8b23-934e8c221887.png)
+[cia QR](https://user-images.githubusercontent.com/6605273/31919870-b90b7636-b865-11e7-8b23-934e8c221887.png)
 
 
 ## LICENSE
