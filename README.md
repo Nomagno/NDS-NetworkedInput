@@ -9,7 +9,11 @@ The original project is so compact and elegant I found myself making clients wit
 ## Features
 - [x] NDS Version
 - [x] 3DS Version
-- [x] Example, (hopefully) portable debug server.
+- [x] Example, (mostly) portable debug server.
+- [ ] Replace all in-app references to the old name
+- [ ] Linux UInput server
+- [ ] Windows.Gaming.Input server
+- [ ] Reimplement the Android input server
 - [ ] Make the 3DS version pretty, or the NDS version ugly ;)
 
 ## Usage
