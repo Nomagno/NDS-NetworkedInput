@@ -1,4 +1,4 @@
-NDS-controller
+NDS-NetworkedInput
 ===============
 
 [This is a hard fork of Louisvh's repo](https://github.com/Louisvh/NDS-controller)
