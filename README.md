@@ -10,6 +10,7 @@ The original project is so compact and elegant I found myself making clients wit
 - [x] NDS Version
 - [x] 3DS Version
 - [x] Example, (mostly) portable debug server.
+- [ ] Example, (mostly) portable C library.
 - [ ] Replace all in-app references to the old name
 - [ ] Linux UInput server
 - [ ] Windows.Gaming.Input server
