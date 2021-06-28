@@ -1,101 +1,120 @@
+#include <arpa/inet.h>
+#include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
-#include <arpa/inet.h>
-#include <stdbool.h> 
-#include <stdlib.h>
 
 #define PORT 3210
 #define MAXLINE 5
 
 char *buffer_bin;
-char group1[8];
-char group2[4];
-unsigned int x; 
+char groupdef[13];
+
+int x = 0, i, f;
 int buffer[1];
 int recvtmp;
 int sock;
+
+bool groupdef_bool[12];
+
 socklen_t len;
 struct sockaddr_in servaddr, cliaddr;
 
-
-
 void get_input_packet() {
-	// Gets any incoming packages
-		recvtmp = recvfrom(sock, (unsigned int * ) buffer, MAXLINE,
-        MSG_WAITALL, (struct sockaddr * ) & cliaddr, &
-        len);
+  // Gets any incoming packages
+  recvtmp = recvfrom(sock, (unsigned int *)buffer, MAXLINE, MSG_WAITALL,
+                     (struct sockaddr *)&cliaddr, &len);
 }
-
 
 void create_socket() {
 
-    // Creates socket
-    if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
-        perror("Could not create socket");
-    } else {
-        printf("Socket created successfully\n");
-    }
-    memset( & servaddr, 0, sizeof(servaddr));
-    memset( & cliaddr, 0, sizeof(cliaddr));
+  // Creates socket
+  if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+    perror("Could not create socket\n");
+  } else {
+    printf("Socket created successfully\n");
+  }
+  memset(&servaddr, 0, sizeof(servaddr));
+  memset(&cliaddr, 0, sizeof(cliaddr));
 
-    // Fills standard info
-    servaddr.sin_family = AF_INET; // IPv4
-    servaddr.sin_addr.s_addr = INADDR_ANY;
-    servaddr.sin_port = htons(PORT);
+  // Fills standard info
+  servaddr.sin_family = AF_INET; // IPv4
+  servaddr.sin_addr.s_addr = INADDR_ANY;
+  servaddr.sin_port = htons(PORT);
 
-    // Binds the socket with the server address
-    if (bind(sock, (const struct sockaddr * ) & servaddr, sizeof(servaddr)) < 0) {
-        perror("Could not bind socket");
-    } else {
-        printf("Socket binded successfully\nListening for client input, enter IP: "
-            "[TO BE IMPLEMENTED]\n");
-    }
+  // Binds the socket with the server address
+  if (bind(sock, (const struct sockaddr *)&servaddr, sizeof(servaddr)) < 0) {
+    perror("Could not bind socket\n");
+  } else {
+    printf("Socket binded successfully\nListening for client input, take note "
+           "of this devices's IPv4 address.\n");
+  }
 
-    len = sizeof(cliaddr);
+  len = sizeof(cliaddr);
 }
 
-char *int_to_bin(int n)
-{
-  /*Binary operations to transform a base 
+char *int_to_bin(int n) {
+  /*Binary operations to transform a base
     10 integer into a string of bits*/
   int c, d, t;
   char *p;
 
   t = 0;
-  p = (char*)malloc(32+1);
+  p = (char *)malloc(32 + 1);
 
   if (p == NULL)
     exit(EXIT_FAILURE);
 
-  for (c = 31 ; c >= 0 ; c--)
-  {
+  for (c = 31; c >= 0; c--) {
     d = n >> c;
 
     if (d & 1)
-      *(p+t) = 1 + '0';
+      *(p + t) = 1 + '0';
     else
-      *(p+t) = 0 + '0';
+      *(p + t) = 0 + '0';
 
     t++;
   }
-  *(p+t) = '\0';
 
-  return  p;
+  return p;
 }
 
+void get_controls(bool control_output[12]) {
+  /*Requires it to be passed an 12 element bool array,
+  and checks it against the controls being received.
+  structure of the array (False = not pressed, true = pressed):
+  Y X L R DOWN UP LEFT RIGHT START SELECT B A*/
+  get_input_packet();
+  buffer_bin = int_to_bin(buffer[0]);
+  strncpy(groupdef, buffer_bin, sizeof(groupdef) - 5);
+  strncpy(groupdef + 8, buffer_bin + 12, sizeof(groupdef) - 1);
+
+  groupdef[sizeof(groupdef) - 1] = '\0';
+
+  for (i = 0; i < 12; i++) {
+    switch (groupdef[i]) {
+    case '0':
+      control_output[i] = false;
+      break;
+    case '1':
+      control_output[i] = true;
+      break;
+    }
+  }
+}
+
+/*
 int debug(void) {
-    create_socket();
     while (true) {
-        get_input_packet();
-		buffer_bin  = int_to_bin(buffer[0]);
-		strncpy(group1, buffer_bin, 8);
-		group1[8] = '\0';
-		strncpy(group2, buffer_bin + 12, 4);
-		group2[4] = '\0';		
-		//Print the output for debugging purposes
-		printf("ITERATION %i:\n GROUP1 [%s]\n GROUP2 [%s]\n", x, group1, group2);
 
-		x++;
-			}
+                get_controls(groupdef_bool);
+                //Print the output for debugging purposes
+                printf("ITERATION %i:\n Packet:\n[%i%i%i%i%i%i%i%i%i%i%i%i]\nG",
+                x, groupdef_bool[0], groupdef_bool[1], groupdef_bool[2],
+                 groupdef_bool[3], groupdef_bool[4], groupdef_bool[5],
+groupdef_bool[6], groupdef_bool[7], groupdef_bool[8], groupdef_bool[9],
+                groupdef_bool[10], groupdef_bool[11]);
+                        }
 }
+*/
