@@ -9,7 +9,7 @@ int main(void) {
   while (true) {
     get_controls(groupdef_bool);
 
-    printf("ITERATION %i:\n Packet:\n[%i%i%i%i%i%i%i%i%i%i%i%i]\nG", x,
+    printf("ITERATION %i:\n Packet:\n[%i%i%i%i%i%i%i%i%i%i%i%i]\n", x,
            groupdef_bool[0], groupdef_bool[1], groupdef_bool[2],
            groupdef_bool[3], groupdef_bool[4], groupdef_bool[5],
            groupdef_bool[6], groupdef_bool[7], groupdef_bool[8],
