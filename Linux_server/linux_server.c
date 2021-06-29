@@ -10,7 +10,8 @@ TO FIND THE NDS/3DS BUTTON YOU WANT TO REBIND IN QUESTION*/
 /*TO CHANGE BINDINGS, USE YOUR EDITOR'S SEARCH FEATURE 
 TO FIND THE NDS/3DS BUTTON YOU WANT TO REBIND IN QUESTION*/
 
-/* CHANGE BOTH (THERE ARE TWO) "KEY_X" where X is the key you want for each binding" */
+/* CHANGE BOTH (THERE ARE TWO) "KEY_X" where X is the key you want for each binding */
+/* All keys have to be initialized at the beggining of the file (the cluster of IOCTLs) so make sure to replace it there as well*/
 
 /* CHANGE BOTH (THERE ARE TWO) "KEY_X" where X is the key you want for each binding" */
 
