@@ -12,14 +12,17 @@ The original project is so compact and elegant I found myself making clients wit
 - [x] Example, (mostly) portable debug server.
 - [X] Example, (mostly) portable C library.
 - [ ] Replace all in-app references to the old name
-- [ ] Linux UInput server
+- [X] Linux UInput server (For the most technical users, probably also works in Android under Termux)
 - [ ] Windows.Gaming.Input server
 - [ ] Reimplement the Android input server
 - [ ] Make the 3DS version pretty, or the NDS version ugly ;)
 
 ## Usage
-*Server:*
+*Example Server:*
 Build the example server using your favorite C-compliant compiler.
+
+*Linux Server:*
+Build the linux server using your favorite C-compliant compiler, but make sure it is in a Linux system or with a cross-compile toolchain for Linux.
 
 *NDS:*
 Build the client into a .nds file using devkitARM or download it __[here](https://github.com/Louisvh/NDS-controller/releases/download/v1.2.0/NDS-controller.nds)__.
