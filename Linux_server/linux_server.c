@@ -72,7 +72,7 @@ int fd = open("/dev/uinput", O_WRONLY | O_NONBLOCK);
 	ioctl(fd, UI_DEV_SETUP, &usetup);
 	ioctl(fd, UI_DEV_CREATE);
 	create_socket();
-	printf("Default Mappings: <[DPAD - ARROWS] [B A Y X L R SELECT START - Z X C V B N F G]\n [CIR_PAD] - [W A S D] [TOUCH] - [M]");
+	printf("Default Mappings: <[DPAD - ARROWS] [B A Y X L R SELECT START - Z X C V B N F G]\n [CIR_PAD] - [W A S D] [TOUCH] - [M]\n");
 
 	while (true) {
 	get_controls(groupdef_bool);
