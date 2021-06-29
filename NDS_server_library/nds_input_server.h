@@ -9,14 +9,14 @@
 #define MAXLINE 5
 
 char *buffer_bin;
-char groupdef[13];
+char groupdef[18];
 
 int x = 0, i, f;
 int buffer[1];
 int recvtmp;
 int sock;
 
-bool groupdef_bool[12];
+bool groupdef_bool[17];
 
 socklen_t len;
 struct sockaddr_in servaddr, cliaddr;
@@ -80,19 +80,20 @@ char *int_to_bin(int n) {
   return p;
 }
 
-void get_controls(bool control_output[12]) {
+void get_controls(bool control_output[17]) {
   /*Requires it to be passed an 12 element bool array,
   and checks it against the controls being received.
   structure of the array (False = not pressed, true = pressed):
-  Y X L R DOWN UP LEFT RIGHT START SELECT B A*/
+  CDOWN CUP CLEFT CRIGHT  TOUCH Y X L R DOWN UP LEFT RIGHT START SELECT B A*/
   get_input_packet();
   buffer_bin = int_to_bin(buffer[0]);
-  strncpy(groupdef, buffer_bin, sizeof(groupdef) - 5);
-  strncpy(groupdef + 8, buffer_bin + 12, sizeof(groupdef) - 1);
-
+  strncpy(groupdef + 9, buffer_bin, sizeof(groupdef) - 10);
+  strncpy(groupdef + 5, buffer_bin + 12, sizeof(groupdef) - 14);
+  strncpy(groupdef + 4, buffer_bin + 19, sizeof(groupdef) - 17);
+  strncpy(groupdef, buffer_bin + 24, sizeof(groupdef) - 14);
   groupdef[sizeof(groupdef) - 1] = '\0';
 
-  for (i = 0; i < 12; i++) {
+  for (i = 0; i < 17; i++) {
     switch (groupdef[i]) {
     case '0':
       control_output[i] = false;
@@ -101,6 +102,7 @@ void get_controls(bool control_output[12]) {
       control_output[i] = true;
       break;
     }
+
   }
 }
 
