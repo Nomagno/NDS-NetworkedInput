@@ -15,7 +15,7 @@ The original project is so compact and elegant I found myself making clients wit
 - [X] Linux UInput server (For the most technical users, probably also works in Android under Termux)
 - [ ] Windows.Gaming.Input server
 - [ ] Reimplement the Android input server
-- [ ] Make the 3DS version pretty, or the NDS version ugly ;)
+- [ ] Add extra (New) 3DS Functionality
 
 ## Usage
 *Example Server:*
