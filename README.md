@@ -12,7 +12,7 @@ The original project is so compact and elegant I found myself making clients wit
 - [x] Example, (mostly) portable debug server.
 - [X] Example, (mostly) portable C library.
 - [ ] Replace all in-app references to the old name
-- [X] Linux UInput server (For the most technical users, probably also works in Android under Termux)    
+- [X] Linux UInput server (Also works in Android under Termux, requires root)    
   - Still needs proper rebinding, the source code is a good enough config file at the moment 
 - [ ] Windows.Gaming.Input server
   - Library already supports Windows
