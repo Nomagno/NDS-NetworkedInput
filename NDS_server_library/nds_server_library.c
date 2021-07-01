@@ -1,4 +1,4 @@
-#include "nds_input_server.h"
+#include "nds_server_library.h"
 
 void get_input_packet() {
 // Gets any incoming packages
