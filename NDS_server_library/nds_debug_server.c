@@ -1,4 +1,4 @@
-#include "nds_input_server.c"
+#include "nds_server_library.c"
 
 int main(void) {
   // get_controls modifies a bool array it is passed
