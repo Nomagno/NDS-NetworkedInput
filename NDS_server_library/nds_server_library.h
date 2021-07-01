@@ -4,7 +4,7 @@
 #include <string.h>
 
 #define PORT 3210
-#define MAXLINE 32
+#define MAXLINE 5
 
 #if defined(__unix__) || defined(__unix) ||                                    \
     (defined(__APPLE__) && defined(__MACH__))

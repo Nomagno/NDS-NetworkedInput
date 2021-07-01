@@ -1,5 +1,7 @@
 #include "nds_server_library.h"
 
+int d, checksum, checksum_old;
+
 void get_input_packet() {
 // Gets any incoming packages
 #if defined(_WIN32)
