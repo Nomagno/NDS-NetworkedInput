@@ -23,7 +23,7 @@ The original project is so compact and elegant I found myself making clients wit
 
 ## Usage
 *Example Server:*
-Build the example server using your favorite C-compliant compiler.
+Build the example server using your favorite C-compliant compiler. (Can also use `cmake`, which is recommended for Windows)
 
 *Linux Server:*
 Build the linux server using your favorite C-compliant compiler, but make sure it is in a Linux system or with a cross-compile toolchain for Linux.
@@ -41,18 +41,6 @@ using your preferred method.
 
 ## Building
 
-### Windows
-
-- Visual Studio 20xx
-- Cmake
-
-```
-cd NDS_server_library
-mkdir build
-cd build
-cmake ..
-cmake --build .
-```
 
 ## LICENSE
 :[MIT LICENSE](LICENSE)
