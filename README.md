@@ -14,8 +14,8 @@ The original project is so compact and elegant I found myself making clients wit
 - [x] Example, (mostly) portable debug server.
 - [X] (Mostly) portable C library.
 - [ ] Replace all in-app references to the old name
-- [X] Linux UInput server (Also works in Android under Termux, requires root)    
-  - Still needs proper rebinding, the source code is a good enough config file at the moment 
+- [X] Linux UInput server (Also works in Android under Termux, requires root)
+  - Still needs proper rebinding, the source code is a good enough config file at the moment
 - [ ] Windows.Gaming.Input server
   - Library already supports Windows
 - [ ] Reimplement the Android input server
@@ -33,12 +33,26 @@ Build the client into a .nds file using devkitARM or download it __[here](https:
 Run it using the compatible homebrew-/flashcard of your choice.
 
 *3DS:*
-Build the client using devkitARM or download it from __[here](https://github.com/Louisvh/NDS-controller/releases/download/v1.2.0/NDS-controller.cia)__. Install it 
-using your preferred method. 
+Build the client using devkitARM or download it from __[here](https://github.com/Louisvh/NDS-controller/releases/download/v1.2.0/NDS-controller.cia)__. Install it
+using your preferred method.
 
-3DS .cia link, scan in FBI to install:  
+3DS .cia link, scan in FBI to install:
 [cia QR](https://user-images.githubusercontent.com/6605273/31919870-b90b7636-b865-11e7-8b23-934e8c221887.png)
 
+## Building
+
+### Windows
+
+- Visual Studio 20xx
+- Cmake
+
+```
+cd NDS_server_library
+mkdir build
+cd build
+cmake ..
+cmake --build .
+```
 
 ## LICENSE
 :[MIT LICENSE](LICENSE)
