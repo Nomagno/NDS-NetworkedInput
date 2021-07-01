@@ -12,7 +12,7 @@ The original project is so compact and elegant I found myself making clients wit
 - [x] NDS Version
 - [x] 3DS Version
 - [x] Example, (mostly) portable debug server.
-- [X] Example, (mostly) portable C library.
+- [X] (Mostly) portable C library.
 - [ ] Replace all in-app references to the old name
 - [X] Linux UInput server (Also works in Android under Termux, requires root)    
   - Still needs proper rebinding, the source code is a good enough config file at the moment 
