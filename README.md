@@ -31,11 +31,11 @@ Build the example server using your favorite C-compliant compiler. (For Windows 
 Build the linux server using your favorite C-compliant compiler, but make sure it is in a Linux system or with a cross-compile toolchain for Linux.
 
 *NDS:*
-Build the client into a .nds file using devkitARM or download it __[here](https://github.com/Louisvh/NDS-controller/releases/download/v1.2.0/NDS-controller.nds)__.
-Run it using the compatible homebrew-/flashcard of your choice.
+Build the client into a .nds file using devkitARM or download it __[here](https://github.com/Nomagno/NDS-NetworkedInput/releases/download/v1.5.0-alpha/NDS-NetworkedInput.nds)__.
+Run it using the compatible homebrew/flashcard of your choice.
 
 *3DS:*
-Build the client using devkitARM or download it from __[here](https://github.com/Louisvh/NDS-controller/releases/download/v1.2.0/NDS-controller.cia)__. Install it
+Build the client using devkitARM or download it from __[here](https://github.com/Nomagno/NDS-NetworkedInput/releases/download/v1.5.0-alpha/3DS-NetworkedInput.cia)__. Install it
 using your preferred method.
 
 *Android:*
