@@ -42,9 +42,6 @@ using your preferred method.
 Is currently not buildable because of outdated libraries (Source __[here](https://github.com/Louisvh/NDS-controller-android-host)__ if you want to help), and has been pulled from the Play Store by the author, however I have made a binary available __[here](https://github.com/Nomagno/NDS-NetworkedInput/releases/download/v1.5.0-alpha/OLD_NDS_ANDROID_SERVER.apk)__.
 
 
-3DS .cia link, scan in FBI to install:
-[cia QR](https://user-images.githubusercontent.com/6605273/31919870-b90b7636-b865-11e7-8b23-934e8c221887.png)
-
 ## Building
 
 
