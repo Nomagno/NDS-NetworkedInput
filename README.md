@@ -39,7 +39,7 @@ Build the client using devkitARM or download it from __[here](https://github.com
 using your preferred method.
 
 *Android:*
-Is currently not buildable because of outdated libraries, and has been pulled from the Play Store by the author, however I have made a binary available __[here](https://github.com/Nomagno/NDS-NetworkedInput/releases/download/v1.5.0-alpha/OLD_NDS_ANDROID_SERVER.apk)__
+Is currently not buildable because of outdated libraries (Source __[here](https://github.com/Louisvh/NDS-controller-android-host)__ if you want to help), and has been pulled from the Play Store by the author, however I have made a binary available __[here](https://github.com/Nomagno/NDS-NetworkedInput/releases/download/v1.5.0-alpha/OLD_NDS_ANDROID_SERVER.apk)__
 
 
 3DS .cia link, scan in FBI to install:
