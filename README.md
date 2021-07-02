@@ -23,7 +23,7 @@ The original project is so compact and elegant I found myself making clients wit
   - ZL & ZR already work, but need to be implemented in the library
   - Player ID is now functional on 3DS and is easily accessibly trough the library on both consoles!
 
-## Usage
+## Get started
 *Example Server:*
 Build the example server using your favorite C-compliant compiler. (For Windows please use MinGW, MSVC is NOT supported for now)
 
