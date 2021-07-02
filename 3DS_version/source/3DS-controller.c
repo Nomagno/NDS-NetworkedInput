@@ -19,13 +19,13 @@
 #define SOC_ALIGN       0x1000
 #define SOC_BUFFERSIZE  0x100000
 
-#define DEST_PORT 3210
+const int DEST_PORT = 3210;
 
 char dest_addr[16] = "192.168.001.001";
 
 static u32 *SOC_buffer = NULL;
 s32 sock = -1, csock = -1;
-
+u32 ID = 1;
 __attribute__((format(printf,1,2)))
 void failExit(const char *fmt, ...);
 
@@ -149,11 +149,11 @@ void socShutdown() {
 }
 
 //---------------------------------------------------------------------------------
-u32 revEndian(u32 number) {
+u32 revEndianPlus(u32 number) {
 //---------------------------------------------------------------------------------
     u32 b0, b1, b2, b3;
 
-    b0 = (number & 0x000000ff) << 24u;
+    b0 = ((number & 0x000000ff) << 24u) + (ID << 2);
     b1 = (number & 0x0000ff00) << 8u;
     b2 = (number & 0x00ff0000) >> 8u;
     b3 = (number & 0xff000000) >> 24u;
@@ -214,13 +214,13 @@ int main(int argc, char **argv) {
 	while (aptMainLoop()) {
         u32 kHeld, kDown, kUp;
         u32 sendBuf[2]= {0,0};
-        u32 ID = 0; // TODO changeable playerID
         int i=0;
 
         printf("\x1b[1;1HSending to %s:%d", dest_addr, DEST_PORT);
         printf("\x1b[8;1HPress Start+Select+down to change IP address");
-        printf("\x1b[18;1HPress Start+Select+L+R to quit");
-    
+        printf("\x1b[16;1HPress Start+Select+L+R to quit");
+        printf("\x1b[24;1HPress Start+Select+A to change player ID (%d)", ID);
+
 		hidScanInput();
 
         kDown = hidKeysDown();
@@ -229,8 +229,7 @@ int main(int argc, char **argv) {
 
         if ( kDown || kUp ) {
             // We're sending from big to little endian architectures
-            sendBuf[0] = revEndian(kHeld);
-            sendBuf[1] = revEndian(ID);
+            sendBuf[0] = revEndianPlus(kHeld);
             if (sendto(sock, &sendBuf, 8 , 0 , (struct sockaddr *) &server, slen)==-1)
             {
                 failExit("sendto()\n");
@@ -248,6 +247,15 @@ int main(int argc, char **argv) {
 		if (kHeld & KEY_START && kHeld & KEY_SELECT && kHeld & KEY_DOWN ) {
             setIP();
         }
+
+		if (kHeld & KEY_START && kHeld & KEY_SELECT && kDown & KEY_A) {
+            if (ID == 1) { ID++; } else { ID = 1; }
+        }
+
+		if (kHeld & KEY_START && kHeld & KEY_SELECT && kHeld & KEY_DOWN) {
+            setIP();
+        }
+
 
 		gspWaitForVBlank();
 	}

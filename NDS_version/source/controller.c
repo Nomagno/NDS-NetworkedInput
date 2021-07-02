@@ -22,14 +22,14 @@
 #include "controller.h"
 
 char dest_addr[16] = "192.168.001.001";
-
 static u32 *SOC_buffer = NULL;
 s32 sock = -1, csock = -1;
+u32 ID;
 
-u32 revEndian(u32 number) {
+u32 revEndianPlus(u32 number) {
     u32 b0, b1, b2, b3;
 
-    b0 = (number & 0x000000ff) << 24u;
+    b0 = ((number & 0x000000ff) << 24u) + (ID << 2);
     b1 = (number & 0x0000ff00) << 8u;
     b2 = (number & 0x00ff0000) >> 8u;
     b3 = (number & 0xff000000) >> 24u;
@@ -185,7 +185,7 @@ void mainControlLoop(int player) {
 
     // ask for and link to the destination IP
     setIP();
-
+    ID = player; 
 	memset (&server, 0, sizeof (server));
 
 	server.sin_family = AF_INET;
@@ -197,13 +197,14 @@ void mainControlLoop(int player) {
     while (1) {
         u32 kHeld, kDown, kUp;
         u32 sendBuf[2]= {0,0};
-        u32 ID = player; 
         int i=0, inactive=0;
 
         iprintf("\x1b[1;1HIP: %s:%d", dest_addr, DEST_PORT);
         consoleSelect(&bot_screen);
         iprintf("\x1b[4;1HPress Start+Select+down \n to change IP address");
         iprintf("\x1b[8;1HPress Start+Select+L+R \n to quit");
+        iprintf("\x1b[12;1HPlayer ID %d (3 and 4 currently no supported)\n", ID);
+
         consoleSelect(&top_screen);
     
         scanKeys();
@@ -219,8 +220,7 @@ void mainControlLoop(int player) {
                 inactive++;
 
             // We're sending from big to little endian architectures
-            sendBuf[0] = revEndian(kHeld);
-            sendBuf[1] = revEndian(ID);
+            sendBuf[0] = revEndianPlus(kHeld);
             if (sendto(sock, &sendBuf, 8 , 0 , (struct sockaddr *) &server, slen)==-1)
             {
                 iprintf("ERROR: sendto()\n");
@@ -238,6 +238,8 @@ void mainControlLoop(int player) {
 		if (kHeld & KEY_START && kHeld & KEY_SELECT && kHeld & KEY_DOWN ) {
             setIP();
         }
+            if (ID == 1 || ID == 2) {} else { ID = 1; }
+               
         if(pressed&KEY_TOUCH) {
             int box_click;
 

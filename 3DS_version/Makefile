@@ -16,7 +16,7 @@ PORTLIBS	:=	$(PORTLIBS_PATH)/armv6k $(PORTLIBS_PATH)/3ds
 
 # COMMON CONFIGURATION #
 
-NAME := NDS-controller
+NAME := NDS-NetworkedInput
 
 BUILD_DIR := build
 OUTPUT_DIR := output
@@ -43,9 +43,9 @@ endif
 # 3DS/Wii U CONFIGURATION #
 
 ifeq ($(TARGET),$(filter $(TARGET),3DS WIIU))
-    TITLE := NDS-controller
-    DESCRIPTION := Use your DS as a controller for Android!
-    AUTHOR := Louisvh
+    TITLE := NDS-NetworkedInput
+    DESCRIPTION := Use your DS as a controller!
+    AUTHOR := Nomagno
 endif
 
 # 3DS CONFIGURATION #

@@ -14,7 +14,7 @@ include $(DEVKITARM)/ds_rules
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
 #---------------------------------------------------------------------------------
-TARGET		:=	NDS-controller
+TARGET		:=	NDS-NetworkedInput
 BUILD		:=	build
 SOURCES		:=	source
 DATA		:=  
@@ -24,7 +24,7 @@ GRAPHICS	:=	data
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH	:=	-mthumb -mthumb-interwork
+ARCH	:=	-mthumb -mthumb-interwork -fcommon
 
 CFLAGS	:=	-g -Wall -O2\
  		-march=armv5te -mtune=arm946e-s -fomit-frame-pointer\
@@ -35,7 +35,7 @@ CFLAGS	+=	$(INCLUDE) -DARM9
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
 
 ASFLAGS	:=	-g $(ARCH)
-LDFLAGS	=	-specs=ds_arm9.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+LDFLAGS	=	-specs=ds_arm9.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map) 
 
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project (order is important)
@@ -105,8 +105,8 @@ else
     endif
 endif
 
-export GAME_SUBTITLE1  := Version 1.0
-export GAME_SUBTITLE2  := By Louisvh
+export GAME_SUBTITLE1  := Version 1.5
+export GAME_SUBTITLE2  := By Nomagno
 
 .PHONY: $(BUILD) clean
 

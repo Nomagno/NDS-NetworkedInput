@@ -23,11 +23,11 @@
 #ifndef WIFICONNECT_H
 #define WIFICONNECT_H
 
-#include <nds.h>
 #include <stdio.h>
 #include <time.h>
 #include <errno.h>
 
+#include <nds.h>
 #include <dswifi9.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
