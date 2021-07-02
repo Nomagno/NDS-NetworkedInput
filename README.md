@@ -23,7 +23,7 @@ The original project is so compact and elegant I found myself making clients wit
 
 ## Usage
 *Example Server:*
-Build the example server using your favorite C-compliant compiler. (Can also use `cmake`, which is recommended for Windows)
+Build the example server using your favorite C-compliant compiler. (For Windows please use MinGW, MSVC is NOT supported for now)
 
 *Linux Server:*
 Build the linux server using your favorite C-compliant compiler, but make sure it is in a Linux system or with a cross-compile toolchain for Linux.
