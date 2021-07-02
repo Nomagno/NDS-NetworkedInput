@@ -38,6 +38,10 @@ Run it using the compatible homebrew-/flashcard of your choice.
 Build the client using devkitARM or download it from __[here](https://github.com/Louisvh/NDS-controller/releases/download/v1.2.0/NDS-controller.cia)__. Install it
 using your preferred method.
 
+*Android:*
+Is currently not buildable because of outdated libraries, and has been pulled from the Play Store by the author, however I have made a binary available __[here](https://github.com/Nomagno/NDS-NetworkedInput/releases/download/v1.5.0-alpha/OLD_NDS_ANDROID_SERVER.apk)__
+
+
 3DS .cia link, scan in FBI to install:
 [cia QR](https://user-images.githubusercontent.com/6605273/31919870-b90b7636-b865-11e7-8b23-934e8c221887.png)
 
