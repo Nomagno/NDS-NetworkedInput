@@ -41,9 +41,10 @@ using your preferred method.
 *Android:*
 Is currently not buildable because of outdated libraries (Source __[here](https://github.com/Louisvh/NDS-controller-android-host)__ if you want to help), and has been pulled from the Play Store by the author, however I have made a binary available __[here](https://github.com/Nomagno/NDS-NetworkedInput/releases/download/v1.5.0-alpha/OLD_NDS_ANDROID_SERVER.apk)__.
 
-
-## Building
-
-
 ## LICENSE
+
+BY CONTRIBUTING TO THIS PROJECT, YOU AGREE TO LICENSE ALL CODE YOU PROVIDE UNDER THE MIT LICENSE
+
+This project's license:
+
 :[MIT LICENSE](LICENSE)
