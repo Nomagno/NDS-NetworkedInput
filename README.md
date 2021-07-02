@@ -20,8 +20,8 @@ The original project is so compact and elegant I found myself making clients wit
   - Library already supports Windows!
 - [ ] Reimplement the Android input server
 - Add extra (New) 3DS & DS Functionality
-  - ZL & ZR already work!
-  - Player ID is now functional on 3DS!
+  - ZL & ZR already work, but need to be implemented in the library
+  - Player ID is now functional on 3DS and is easily accessibly trough the library on both consoles!
 
 ## Usage
 *Example Server:*
