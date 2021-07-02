@@ -13,13 +13,15 @@ The original project is so compact and elegant I found myself making clients wit
 - [x] 3DS Version
 - [x] Example, (mostly) portable debug server.
 - [X] (Mostly) portable C library.
-- [ ] Replace all in-app references to the old name
+- [X] Replace all in-app references to the old name
 - [X] Linux UInput server (Also works in Android under Termux, requires root)
   - Still needs proper rebinding, the source code is a good enough config file at the moment
 - [ ] Windows.Gaming.Input server
-  - Library already supports Windows
+  - Library already supports Windows!
 - [ ] Reimplement the Android input server
-- [ ] Add extra (New) 3DS Functionality
+- Add extra (New) 3DS & DS Functionality
+  - ZL & ZR bits already work!
+  - Player ID is now functional on 3DS!
 
 ## Usage
 *Example Server:*
