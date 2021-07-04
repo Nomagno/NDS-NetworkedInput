@@ -11,8 +11,8 @@ The original project is so compact and elegant I found myself making clients wit
 ## Features
 - [x] NDS Version
 - [x] 3DS Version
-- [x] Example, (mostly) portable debug server.
-- [X] (Mostly) portable C library.
+- [x] Example, (mostly) portable debug server
+- [X] (Mostly) portable C library
 - [X] Replace all in-app references to the old name
 - [X] Linux UInput server (Also works in Android under Termux, requires root)
   - Still needs proper rebinding, the source code is a good enough config file at the moment
