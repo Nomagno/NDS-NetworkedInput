@@ -11,14 +11,14 @@ The original project is so compact and elegant I found myself making clients wit
 ## Features
 - [x] NDS Version
 - [x] 3DS Version
-- [x] Example, (mostly) portable debug server.
-- [X] (Mostly) portable C library.
+- [x] Example, (mostly) portable debug server
+- [X] (Mostly) portable C library
 - [X] Replace all in-app references to the old name
 - [X] Linux UInput server (Also works in Android under Termux, requires root)
   - Still needs proper rebinding, the source code is a good enough config file at the moment
-- [ ] Windows.Gaming.Input server
-  - Library already supports Windows!
-- [ ] Reimplement the Android input server
+- [X] Windows WinUser server
+  - Experimental support is here! Same rebinding issue
+- [ ] Reimplement the Android input server (SEE GET STARTED SECTION TO DOWNLOAD OLD ONE)
 - Add extra (New) 3DS & DS Functionality
   - ZL & ZR already work, but need to be implemented in the library
   - Player ID is now functional on 3DS and will shortly be easily accessibly trough the library on both consoles!
@@ -31,7 +31,10 @@ Build the example server (nds_debug_server.c) using your favorite C-compliant co
 Include the library (nds_server_library.c) in your project and look at the example server for usage.
 
 *Linux Server:*
-Build the linux server using your favorite C-compliant compiler, but make sure it is in a Linux system or with a cross-compile toolchain for Linux.
+Build the Linux server using your favorite C-compliant compiler, but make sure it is in a Linux system or with a cross-compile toolchain for Linux.
+
+*Windows Server:*
+Build the Windows server using your favorite MinGW C-compliant compiler. Note MSVC and other toolchains are currently unsupported, but I'd love you to help me get them working!
 
 *NDS:*
 Build the client into a .nds file using devkitARM or download it __[here](https://github.com/Nomagno/NDS-NetworkedInput/releases/download/v1.5.0-alpha/NDS-NetworkedInput.nds)__.

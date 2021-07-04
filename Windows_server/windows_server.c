@@ -148,6 +148,7 @@ int main() {
   inputs[33].ki.dwFlags = KEYEVENTF_KEYUP;
 
   while (true) {
+    Sleep(300);
     get_controls(groupdef_bool);
     for (k = 0; k < 17; k++) {
       switch (k) {
