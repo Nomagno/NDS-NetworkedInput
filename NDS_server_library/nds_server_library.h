@@ -43,6 +43,6 @@ void get_input_packet(void);
 
 void create_socket(void);
 
-char *int_to_bin();
+void int_to_bin();
 
 void get_controls();

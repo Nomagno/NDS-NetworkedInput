@@ -1,7 +1,7 @@
 #include "nds_server_library.h"
 
 int d, checksum, checksum_old;
-
+char buf[32 + 1];
 void get_input_packet() {
 // Gets any incoming packages
 #if defined(_WIN32)
@@ -49,30 +49,13 @@ void create_socket() {
   len = sizeof(cliaddr);
 }
 
-char *int_to_bin(int n) {
-  /*Binary operations to transform a base
-    10 integer into a string of bits*/
-  int c, d, t;
-  char *p;
-
-  t = 0;
-  p = (char *)malloc(32 + 1);
-
-  if (p == NULL)
-    exit(EXIT_FAILURE);
-
-  for (c = 31; c >= 0; c--) {
-    d = n >> c;
-
-    if (d & 1)
-      *(p + t) = 1 + '0';
-    else
-      *(p + t) = 0 + '0';
-
-    t++;
+void int_to_bin(int n, char buf[32 + 1]) {
+  char *p = buf;
+  for (int i = 31; i >= 0; i--) {
+    *p++ = '0' + !!((n >> i) & 1);
   }
 
-  return p;
+  *p = '\0';
 }
 
 void get_controls(bool control_output[17]) {
@@ -81,13 +64,13 @@ void get_controls(bool control_output[17]) {
   structure of the array (False = not pressed, true = pressed):
   CDOWN CUP CLEFT CRIGHT  TOUCH Y X L R DOWN UP LEFT RIGHT START SELECT B A*/
   get_input_packet();
-  buffer_bin = int_to_bin(buffer[0]);
+  int_to_bin(buffer[0], buf);
+  buffer_bin = buf;
   strncpy(groupdef + 9, buffer_bin, sizeof(groupdef) - 10);
   strncpy(groupdef + 5, buffer_bin + 12, sizeof(groupdef) - 14);
   strncpy(groupdef + 4, buffer_bin + 19, sizeof(groupdef) - 17);
   strncpy(groupdef, buffer_bin + 24, sizeof(groupdef) - 14);
   groupdef[sizeof(groupdef) - 1] = '\0';
-
   for (i = 0; i < 17; i++) {
     switch (groupdef[i]) {
     case '0':
