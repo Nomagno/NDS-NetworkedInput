@@ -18,7 +18,7 @@ The original project is so compact and elegant I found myself making clients wit
   - Still needs proper rebinding, the source code is a good enough config file at the moment
 - [X] Windows WinUser server
   - Experimental support is here! Same rebinding issue
-- [ ] Reimplement the Android input server
+- [ ] Reimplement the Android input server (SEE GET STARTED SECTION TO DOWNLOAD OLD ONE)
 - Add extra (New) 3DS & DS Functionality
   - ZL & ZR already work, but need to be implemented in the library
   - Player ID is now functional on 3DS and will shortly be easily accessibly trough the library on both consoles!
