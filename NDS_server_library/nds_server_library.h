@@ -21,8 +21,8 @@ int sock;
 #if defined(_WIN32)
 
 // Windows
-#include <winsock.h>
-#include <windows.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
 int len;
 int buffer[1];
 SOCKET sock;
