@@ -17,7 +17,7 @@ The original project is so compact and elegant I found myself making clients wit
 - [X] Linux UInput server (Also works in Android under Termux, requires root)
   - Still needs proper rebinding, the source code is a good enough config file at the moment
 - [X] Windows WinUser server
-  - Experimental support is here! Need testing (CURRENTLY NOT WORKING, WILL BE FIXED). Same rebinding issue
+  - Experimental support is here! Need testing (NOW WORKING). Same rebinding issue
 - [ ] Reimplement the Android input server (SEE GET STARTED SECTION TO DOWNLOAD OLD ONE)
 - Add extra (New) 3DS & DS Functionality
   - ZL & ZR already work, but need to be implemented in the library
@@ -25,7 +25,7 @@ The original project is so compact and elegant I found myself making clients wit
 
 ## Get started
 *Example Server:*
-Build the example server (nds_debug_server.c) using your favorite C-compliant compiler. Feel free to use it as a template! (For Windows please use MinGW, MSVC is NOT supported for now, and note is does not work at the moment)
+Build the example server (nds_debug_server.c) using your favorite C-compliant compiler. Feel free to use it as a template! (For Windows please use MinGW, MSVC is NOT supported for now)
 
 *Library:*
 Include the library (nds_server_library.c) in your project and look at the example server for usage.
