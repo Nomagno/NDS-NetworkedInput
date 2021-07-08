@@ -10,7 +10,7 @@ int main(void) {
 
   while (true) {
   #if defined(_WIN32)
-	Sleep(300);
+	Sleep(50);
   #endif
 	for(d = 0; d < 17; d++) {
 		checksum_old += groupdef_bool[d];	
