@@ -5,7 +5,7 @@ char buf[32 + 1];
 void get_input_packet() {
 // Gets any incoming packages
 #if defined(_WIN32)
-  recvtmp = recvfrom(sock, (int)buffer, MAXLINE, MWMO_WAITALL,
+  recvtmp = recvfrom(sock, (int)buffer, MAXLINE, 0,
                      (struct sockaddr *)&cliaddr, &len);
 #endif
 
