@@ -9,7 +9,7 @@ Tools for both users and developers to use their DS and 3DS lineup consoles to c
 The original project is so compact and elegant I found myself making clients without much issue, so I thought I might as well just make this into a defacto library. I'll try to make as many input servers as possible in due time.
 
 ## Features
-- If you want to help add new features and fix bugs, [check out the 2.0 Project](https://github.com/Nomagno/NDS-NetworkedInput/projects/1)! 
+- If you want to help add new features and fix bugs, [check out the 2.0 Roadmap](https://github.com/Nomagno/NDS-NetworkedInput/projects/1)! 
 - [x] NDS Version
 - [x] 3DS Version
 - [x] Example, (mostly) portable debug server
