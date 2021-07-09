@@ -9,6 +9,7 @@ Tools for both users and developers to use their DS and 3DS lineup consoles to c
 The original project is so compact and elegant I found myself making clients without much issue, so I thought I might as well just make this into a defacto library. I'll try to make as many input servers as possible in due time.
 
 ## Features
+- If you want to help add new features and fix bugs, [check out the 2.0 Project](https://github.com/Nomagno/NDS-NetworkedInput/projects/1)! 
 - [x] NDS Version
 - [x] 3DS Version
 - [x] Example, (mostly) portable debug server
@@ -19,10 +20,6 @@ The original project is so compact and elegant I found myself making clients wit
   - Still needs proper rebinding, the source code is a good enough config file at the moment
 - [X] Windows WinUser server
   - Experimental support is here! Same rebinding issue
-- [ ] Reimplement the Android input server (SEE GET STARTED SECTION TO DOWNLOAD OLD ONE)
-- Add extra (New) 3DS & DS Functionality
-  - ZL & ZR already work, but need to be implemented in the library
-  - Player ID is now functional on 3DS and will shortly be easily accessibly trough the library on both consoles!
 
 ## Get started
 *Example Server:*
