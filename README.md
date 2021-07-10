@@ -20,7 +20,7 @@ The original project is so compact and elegant I found myself making servers wit
   - Still needs proper rebinding, the source code is a good enough config file at the moment
 - [X] Windows WinUser server
   - Experimental support is here! Same rebinding issue
-
+- [ ] MacOS Quartz server
 ## Get started
 *Example Server:*
 Build the example server (nds_debug_server.c) using your favorite C-compliant compiler. Feel free to use it as a template! (For Windows please use MinGW, MSVC is NOT supported for now)
