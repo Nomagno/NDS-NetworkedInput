@@ -1,6 +1,34 @@
 #include "nds_server_library.h"
+int i, f;
+int recvtmp;
+char *buffer_bin;
+char groupdef[18];
+bool groupdef_bool[17];
+struct sockaddr_in servaddr, cliaddr;
+int x = 0;
+#if defined(__unix__) || defined(__unix) || \
+    (defined(__APPLE__) && defined(__MACH__))
 
-int d, checksum, checksum_old;
+// Unix-like
+#include <arpa/inet.h>
+#include <sys/socket.h>
+socklen_t len;
+int buffer[1];
+int sock;
+
+#endif
+
+#if defined(_WIN32)
+
+// Windows
+#include <winsock2.h>
+#include <ws2tcpip.h>
+int len;
+int buffer[1];
+SOCKET sock;
+
+#endif
+
 char buf[32 + 1];
 void get_input_packet() {
 // Gets any incoming packages
@@ -9,7 +37,7 @@ void get_input_packet() {
                      (struct sockaddr *)&cliaddr, &len);
 #endif
 
-#if defined(__unix__) || defined(__unix) ||                                    \
+#if defined(__unix__) || defined(__unix) || \
     (defined(__APPLE__) && defined(__MACH__))
   recvtmp = recvfrom(sock, (unsigned int *)buffer, MAXLINE, MSG_WAITALL,
                      (struct sockaddr *)&cliaddr, &len);

@@ -1,6 +1,6 @@
-#include "nds_server_library.c"
+#include "nds_server_library.h"
 int d, checksum, checksum_old;
-int main(void) {
+int main() {
   // get_controls modifies a bool array it is passed
   // this is what each of the bools (left being index 0
   // and right index 16) map to:

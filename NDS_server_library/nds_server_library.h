@@ -6,43 +6,14 @@
 #define PORT 3210
 #define MAXLINE 5
 
-#if defined(__unix__) || defined(__unix) ||                                    \
-    (defined(__APPLE__) && defined(__MACH__))
+extern int x;
+extern bool groupdef_bool[];
 
-// Unix-like
-#include <arpa/inet.h>
-#include <sys/socket.h>
-socklen_t len;
-int buffer[1];
-int sock;
 
-#endif
-
-#if defined(_WIN32)
-
-// Windows
-#include <winsock2.h>
-#include <ws2tcpip.h>
-int len;
-int buffer[1];
-SOCKET sock;
-
-#endif
-
-char *buffer_bin;
-char groupdef[18];
-
-int x = 0, i, f;
-int recvtmp;
-
-bool groupdef_bool[17];
-
-struct sockaddr_in servaddr, cliaddr;
 void get_input_packet(void);
-// Gets any incoming packages
 
 void create_socket(void);
 
-void int_to_bin();
+void int_to_bin(int, char[]);
 
-void get_controls();
+extern void get_controls(bool[]);
