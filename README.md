@@ -27,7 +27,7 @@ The original project is so compact and elegant I found myself making servers wit
 Build the example server (nds_debug_server.c) using your favorite C-compliant compiler. Feel free to use it as a template!
 
 *Library:*
-Include the library (nds_server_library.c) in your project and look at the example server for usage.
+Include the library (nds_server_library.h) in your project and look at the example server for usage.
 
 *Linux Server:*
 Build the Linux server using your favorite C-compliant compiler, but make sure it is in a Linux system or with a cross-compile toolchain for Linux.
