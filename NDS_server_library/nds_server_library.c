@@ -3,9 +3,8 @@ int i, f;
 int recvtmp;
 char *buffer_bin;
 char groupdef[18];
-bool groupdef_bool[17];
+_Bool groupdef_bool[17];
 struct sockaddr_in servaddr, cliaddr;
-int x = 0;
 #if defined(__unix__) || defined(__unix) || \
     (defined(__APPLE__) && defined(__MACH__))
 
@@ -13,7 +12,7 @@ int x = 0;
 #include <arpa/inet.h>
 #include <sys/socket.h>
 socklen_t len;
-int buffer[1];
+int buffer[3];
 int sock;
 
 #endif
@@ -39,7 +38,7 @@ void get_input_packet() {
 
 #if defined(__unix__) || defined(__unix) || \
     (defined(__APPLE__) && defined(__MACH__))
-  recvtmp = recvfrom(sock, (unsigned int *)buffer, MAXLINE, MSG_WAITALL,
+  recvtmp = recvfrom(sock, buffer, MAXLINE, MSG_WAITALL,
                      (struct sockaddr *)&cliaddr, &len);
 #endif
 }
@@ -86,7 +85,7 @@ void int_to_bin(int n, char buf[32 + 1]) {
   *p = '\0';
 }
 
-void get_controls(bool control_output[17]) {
+void get_controls(_Bool control_output[17]) {
   /*Requires it to be passed an 12 element bool array,
   and checks it against the controls being received.
   structure of the array (False = not pressed, true = pressed):
@@ -102,10 +101,10 @@ void get_controls(bool control_output[17]) {
   for (i = 0; i < 17; i++) {
     switch (groupdef[i]) {
     case '0':
-      control_output[i] = false;
+      control_output[i] = 0;
       break;
     case '1':
-      control_output[i] = true;
+      control_output[i] = 1;
       break;
     }
   }

@@ -24,7 +24,7 @@ The original project is so compact and elegant I found myself making servers wit
 - [ ] Rewrite Android server as an AccessibilityService
 ## Get started
 *Example Server:*
-Build the example server (nds_debug_server.c) using your favorite C-compliant compiler. Feel free to use it as a template! (For Windows please use MinGW, MSVC is NOT supported for now)
+Build the example server (nds_debug_server.c) using your favorite C-compliant compiler. Feel free to use it as a template!
 
 *Library:*
 Include the library (nds_server_library.c) in your project and look at the example server for usage.
@@ -33,7 +33,7 @@ Include the library (nds_server_library.c) in your project and look at the examp
 Build the Linux server using your favorite C-compliant compiler, but make sure it is in a Linux system or with a cross-compile toolchain for Linux.
 
 *Windows Server:*
-Build the Windows server using your favorite MinGW C-compliant compiler. Note MSVC and other toolchains are currently unsupported, but I'd love you to help me get them working! (Make sure to link Winsockets 2 with -lws2_32 or similar)
+Build the Windows server using your favorite C-compliant compiler.
 
 *NDS:*
 Build the client into a .nds file using devkitARM or download it __[here](https://github.com/Nomagno/NDS-NetworkedInput/releases/download/v1.5.0-alpha/NDS-NetworkedInput.nds)__.
