@@ -26,7 +26,7 @@ void emit(int fd, int type, int code, int val) {
   write(fd, &ie, sizeof(ie));
 }
 
-int main(void) {
+int main() {
   struct uinput_setup usetup;
   int fd = open("/dev/uinput", O_WRONLY | O_NONBLOCK);
 
@@ -67,7 +67,7 @@ int main(void) {
   printf("Default Mappings: <[DPAD - ARROWS] [B A Y X L R SELECT START - Z X C "
          "V B N F G]\n [CIR_PAD] - [W A S D] [TOUCH] - [M]\n");
 
-  while (true) {
+  while (1) {
     get_controls(groupdef_bool);
     for (k = 0; k < 17; k++) {
       switch (k) {
