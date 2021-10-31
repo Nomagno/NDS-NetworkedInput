@@ -1,4 +1,4 @@
-#include "../NDS_server_library/nds_server_library.c"
+#include "../NDS_server_library/nds_server_library.h"
 #include <fcntl.h>
 #include <linux/uinput.h>
 #include <string.h>

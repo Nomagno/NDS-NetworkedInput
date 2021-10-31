@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "nds_server_library.h"
 int i, f;
 int recvtmp;

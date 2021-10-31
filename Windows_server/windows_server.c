@@ -1,4 +1,4 @@
-#include "../NDS_server_library/nds_server_library.c"
+#include "../NDS_server_library/nds_server_library.h"
 #include "winuser_alpha_headers.h"
 #include <stdio.h>
 #include <winuser.h>
