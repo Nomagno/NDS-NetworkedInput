@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <arpa/inet.h>
 #include "nds_server_library.h"
 int i, f;
 int recvtmp;
 char *buffer_bin;
 char groupdef[18];
-_Bool groupdef_bool[17];
+volatile _Bool groupdef_bool[17];
+
 struct sockaddr_in servaddr, cliaddr;
 #if defined(__unix__) || defined(__unix) || \
     (defined(__APPLE__) && defined(__MACH__))
@@ -88,7 +90,7 @@ void int_to_bin(int n, char buf[32 + 1]) {
   *p = '\0';
 }
 
-void get_controls(_Bool control_output[17]) {
+void get_controls(volatile _Bool control_output[17]) {
   /*Requires it to be passed an 12 element bool array,
   and checks it against the controls being received.
   structure of the array (False = not pressed, true = pressed):

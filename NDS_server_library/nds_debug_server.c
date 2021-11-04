@@ -1,4 +1,5 @@
 #include "nds_server_library.h"
+#include <stdio.h>
 int d, x = 0, checksum, checksum_old;
 int main() {
   // get_controls modifies a bool array it is passed
