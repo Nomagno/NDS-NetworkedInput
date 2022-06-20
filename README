@@ -1,0 +1,7 @@
+NDS-NetworkedInput
+
+Use your NDS or 3DS as a controller for any device.
+
+A frontend using the UInput API is provided. It has been successfully tested on Linux, Android and FreeBSD.
+A debug frontend is provided. It should work on almost any POSIX-compliant system.
+DevKitPro is needed to build the NDS and 3DS clients.
